@@ -1,0 +1,2 @@
+# Minesweeper
+Small Python game
