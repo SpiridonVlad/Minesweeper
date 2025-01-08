@@ -390,6 +390,9 @@ class Minesweeper:
         text = self.font.render(timer_text, True, self.color["text"])
         text_rect = text.get_rect(center=timer_rect.center)
         self.screen.blit(text, text_rect)
+        if elapsed > 120:
+            self.game_over = True
+            self.win = False
     
     def display_game_over(self):
         """Displays the game over message with modern styling."""
@@ -696,7 +699,7 @@ if __name__ == "__main__":
     
     start_screen = StartScreen(screen, font)
     rows, cols = start_screen.run()
-    mines = int(rows * cols * 0.16)
+    mines = int(rows * cols * 0.30)
     while True:
         game = Minesweeper(rows=rows, cols=cols, mines=mines)
         if not game.run():
