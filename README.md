@@ -1,2 +1,2 @@
 # Minesweeper
-Small Python game
+Very good Python game
